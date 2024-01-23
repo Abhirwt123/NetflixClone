@@ -6,7 +6,7 @@ import { addMovieTrailer } from "../utils/moviesSlice";
 const useBackgroundMovieTrailer = () => {
   const dispath = useDispatch();
   const bgMovieId = useSelector((store) => store?.movie?.addNowPlayingMovie);
-  if (!bgMovieId) return;
+  // if (!bgMovieId) return;
   const id = bgMovieId[1].id;
   const getMovieVideo = async () => {
     const data = await fetch(

@@ -4,6 +4,7 @@ import { auth } from "../utils/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { searchMovie } from "../utils/GptSlice";
 
 const Header = () => {
   const dispath = useDispatch();
@@ -40,8 +41,11 @@ const Header = () => {
     });
 
   }
+  const handelSearchMoviesPage=()=>{
+    dispath(searchMovie())
+  }
   return (
-    <div className="absolute z-10 w-full">
+    <div className="absolute z-10 w-full header">
       <div className="flex justify-between items-center">
         <div className="img-wrap w-2/12">
           <img
@@ -51,8 +55,9 @@ const Header = () => {
         </div>
         {user &&
           <div className="flex gap-2 justify-end px-6">
-            <img src="https://wallpapers.com/images/thumbnail/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp" alt="userIcon" className="w-[10%] object-cover" />
-            <button className="text-white bg-red-700 lg:px-3 lg:py-2 p-1 rounded-md lg:text-xl text-xs" onClick={handelSignOut}>Sign Out</button>
+            <button className="px-4 py-1 bg-red-700 text-white rounded-md me-16 text-lg" onClick={handelSearchMoviesPage}>Search Movies</button>
+            <img src="https://wallpapers.com/images/thumbnail/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp" alt="userIcon" className="w-[8%] object-cover rounded-md" />
+            <button className="text-white bg-red-700 lg:px-3 lg:py-2 p-1 rounded-md lg:text-lg text-xs" onClick={handelSignOut}>Sign Out</button>
           </div>
         }
 
@@ -60,5 +65,5 @@ const Header = () => {
     </div>
   );
 };
-
+  
 export default Header;

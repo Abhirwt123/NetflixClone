@@ -5,18 +5,21 @@ import MovieContainer from './MovieContainer';
 import usePopularMovie from '../Hooks/usePopularMovie';
 import useTopRatedMovie from '../Hooks/useTopRatedMovie';
 import useUpComingMovie from '../Hooks/useUpComingMovie';
+import SearchBox from './SearchBox';
+import { useSelector } from 'react-redux';
+import SearchPage from './SearchPage';
+
 
 const Browser = () => {
- useNowPlayingMovies()
- usePopularMovie()
- useTopRatedMovie()
- useUpComingMovie()
+  const searchMovie = useSelector((store) => store.Gpt.searchMovie)
+  useNowPlayingMovies()
+  usePopularMovie()
+  useTopRatedMovie()
+  useUpComingMovie()
   return (
     <div>
       <Header />
-      <div className='browser-body'>
-       <MovieContainer/>
-      </div> 
+      {searchMovie ? <SearchPage /> :<MovieContainer /> }
     </div>
   )
 }
