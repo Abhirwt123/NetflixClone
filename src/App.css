@@ -6,16 +6,12 @@
     rgba(0, 0, 0, 0.8) 100%
   );
 }
-.cardMovie{
-  ::-webkit-scrollbar {
-    display: none;
+.movies-wrapper::-webkit-scrollbar {
+  display: none;
 }
+.main-bg {
+  background: url(https://assets.nflxext.com/ffe/siteui/vlv3/b4c7f092-0488-48b7-854d-ca055a84fb4f/5b22968d-b94f-44ec-bea3-45dcf457f29e/IN-en-20231204-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.movies-wrapper{
-  ::-webkit-scrollbar {
-    display: none;
-}
-}
-/* .dev-wrapper>box:nth-child(2){
- flex-direction: row-reverse;
-} */

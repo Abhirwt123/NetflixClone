@@ -6,7 +6,7 @@ const GptSlice=createSlice({
         searchMovie:false
     },
     reducers:{
-        searchMovie:(state,action)=>{
+        searchMovie:(state)=>{
          state.searchMovie=!state.searchMovie;
         }
     }

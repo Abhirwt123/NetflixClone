@@ -9,7 +9,7 @@ const useTopRatedMovie = () => {
         const data = await fetch("https://api.themoviedb.org/3/movie/top_rated?page=1", API_OPTIONS);
         const json = await data.json()
         dispath(topRatedMovie(json.results))
-        console.log(json)
+        // console.log(json)
     }
     useEffect(() => {
         nowPlayingMovies()

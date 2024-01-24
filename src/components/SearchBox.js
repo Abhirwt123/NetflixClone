@@ -17,7 +17,7 @@ const SearchBox = () => {
           />
         </div>
         <div className="btn-wrap col-span-3">
-          <button className="px-4 py-2 bg-red-700 text-white rounded-md ">
+          <button className="px-4 py-2 bg-red-700 text-white rounded-md">
             Search Movie
           </button>
         </div>
