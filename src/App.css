@@ -15,3 +15,13 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+/* .movie-card:hover .movie-poster {
+  transition: 0.9s all;
+  position: absolute;
+  transform: scale(1.6);
+  cursor: pointer;
+}
+.movie-card:hover .movie-poster img {
+  border-radius: 12px;
+} */

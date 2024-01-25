@@ -1,5 +1,6 @@
 import React from "react";
 import { MOVIE_IMG_URL } from "../utils/constant";
+import "../App.css"
 
 const MovieCard = ({ movieKey }) => {
   return (

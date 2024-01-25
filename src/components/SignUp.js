@@ -8,16 +8,18 @@ import { auth } from "../utils/firebase";
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
+import { SIGN_UP_LANG_CONFIG } from "../utils/constant";
+import { useSelector } from "react-redux";
 
 const SignUp = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [isUserSignIn, setIsUserSignIn] = useState(true);
-  // setting the error message
   const [errorMessage, setErrorMessage] = useState("");
+  const changedlang = useSelector((store) => store.supportedlang.Lang);
   const email = useRef("");
   const password = useRef("");
   const name = useRef("");
-  // validation function
+
   const handelButtonClick = () => {
     const message = ValidateForm(
       name.current.value,
@@ -58,13 +60,13 @@ const SignUp = () => {
           const user = userCredential.user;
           console.log(user);
           // ...
-          navigate("/browser")
+          navigate("/browser");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + "-" + errorMessage);
-          navigate("/")
+          navigate("/");
         });
     }
   };
@@ -85,7 +87,9 @@ const SignUp = () => {
             >
               <div className="form-wrap w-8/12 py-12">
                 <div className="title text-4xl text-white font-bold mb-6 text-center">
-                  {!isUserSignIn ? "Sign Up" : "Sign In"}
+                  {!isUserSignIn
+                    ? SIGN_UP_LANG_CONFIG[changedlang].signUp
+                    : SIGN_UP_LANG_CONFIG[changedlang].signIn}
                 </div>
                 <div className="input-wrap">
                   <div className="name mb-8 ">
@@ -103,7 +107,9 @@ const SignUp = () => {
                       ref={email}
                       type="text"
                       className="w-full  px-3 py-4 text-white bg-slate-900 placeholder:text-white rounded-md"
-                      placeholder="Email Address"
+                      placeholder={
+                        SIGN_UP_LANG_CONFIG[changedlang].emailPlaceholdertext
+                      }
                     />
                   </div>
                   <div className="password mb-16">
@@ -111,7 +117,9 @@ const SignUp = () => {
                       ref={password}
                       type="password"
                       className=" w-full px-3 py-4 text-white bg-slate-900 placeholder:text-white rounded-md"
-                      placeholder="Password"
+                      placeholder={
+                        SIGN_UP_LANG_CONFIG[changedlang].passwordPlaceholdertext
+                      }
                     />
                     <p className="err font-bold text-red-600 text-lg">
                       {errorMessage}
@@ -122,7 +130,9 @@ const SignUp = () => {
                       className="bg-red-700 text-white px-3 py-4 rounded-md w-full font-bold"
                       onClick={handelButtonClick}
                     >
-                      {!isUserSignIn ? "Sign Up" : "Sign In"}
+                      {!isUserSignIn
+                        ? SIGN_UP_LANG_CONFIG[changedlang].signIn
+                        : SIGN_UP_LANG_CONFIG[changedlang].signUp}
                     </button>
 
                     <div
@@ -130,8 +140,8 @@ const SignUp = () => {
                       onClick={toggleSignIn}
                     >
                       {!isUserSignIn
-                        ? " Sign Up for injoying your favourite Movie Series here"
-                        : "Sign Up"}
+                        ? SIGN_UP_LANG_CONFIG[changedlang].message
+                        : SIGN_UP_LANG_CONFIG[changedlang].signUp}
                     </div>
                   </div>
                 </div>
