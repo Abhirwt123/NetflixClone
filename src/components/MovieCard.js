@@ -1,16 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { MOVIE_IMG_URL } from "../utils/constant";
-import "../App.css"
+import "../App.css";
 
-const MovieCard = ({ movieKey }) => {
+const MovieCard = ({ movieKey, movieName, des, rating, date }) => {
+  const [isActiveCard, setIsActivecard] = useState(false);
+  const [isFav, setIsFav] = useState(false);
+  const handelCardDetails = () => {
+    setIsActivecard(!isActiveCard);
+  };
+  const handelFavMovie = (e) => {
+    e.stopPropagation();
+    setIsFav(!isFav)
+  }
   return (
-    <div>
-      <div className="movie-poster lg:w-44 md:w-28 w-20">
-        <img
-          src={MOVIE_IMG_URL + movieKey}
-          alt="movie card"
-          className="w-100 object-cover"
-        />
+    <div className="">
+      <div
+        className={isActiveCard ? "activeCard card-wrap" : "card-wrap"}
+        onClick={handelCardDetails}>
+        <div className="relative overflow-hidden">
+          <div className="movie-poster lg:w-56 md:w-28 w-20">
+            <img
+              src={MOVIE_IMG_URL + movieKey}
+              alt="movie card"
+              className="w-full object-cover rounded-md"
+            />
+          </div>
+          <div className="card-details absolute bg-black bg-opacity-70">
+            <p className="text-lg text-start font-bold text-white">
+              {movieName}
+            </p>
+            <div className="details flex gap-4 py-2 text-white font-bold text-sm">
+              <p>{rating + "/10"}</p>
+              <p>{date}</p>
+              <p onClick={handelFavMovie}>
+                <i class={isFav ? "fa-solid fa-star text-yellow-400" : "fa-regular fa-star "}></i>
+                </p>
+            </div>
+            <p className="text-xs text-gray-300">{des}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

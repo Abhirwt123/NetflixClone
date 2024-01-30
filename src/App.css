@@ -16,12 +16,13 @@
   background-repeat: no-repeat;
 }
 
-/* .movie-card:hover .movie-poster {
-  transition: 0.9s all;
+.activeCard{
   position: absolute;
-  transform: scale(1.6);
-  cursor: pointer;
+  transform: scale(1.4);
+  transition: .4s all;
+  z-index: 9;
 }
-.movie-card:hover .movie-poster img {
-  border-radius: 12px;
-} */
+.card-wrap.activeCard .card-details{
+  transform: translateY(-100%);
+  padding: 10px;
+}

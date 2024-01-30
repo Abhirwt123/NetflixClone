@@ -5,14 +5,14 @@ import { FOOTER_LANG_CONFIG } from '../utils/constant';
 
 const Footer = () => {
     const dispath = useDispatch();
-    const changedlang = useSelector((store) => store.supportedlang.Lang)
+    const changedlang = useSelector((store) => store.supportedlang.Lang);
     const footerLinks = FOOTER_LANG_CONFIG[changedlang].links;
     const footerLinksSecond = FOOTER_LANG_CONFIG[changedlang].linksSecond;
     return (
         <div className="footer bg-black">
             <div className="wrap w-8/12 m-auto py-8 text-gray-500">
                 <div className="number">
-                    <p>{FOOTER_LANG_CONFIG[changedlang].number}<span> 000-800-919-1694</span> </p>
+                    <p>{FOOTER_LANG_CONFIG[changedlang].number}<span> 000-800-919-1694</span></p>
                 </div>
                 <div className="links mt-10">
                     <ul className="flex gap-36">

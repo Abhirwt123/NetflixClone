@@ -11,10 +11,10 @@ const RecommendedMoviesList = () => {
   return (
     <div className='z-20 bg-black movies-wrapper'>
       <div className=' relative lg:-mt-24 cardMovie'>
-      <MovieList title={"Now Playing"} movies={movies}/>    
-      <MovieList title={"Popular"} movies={popularMovies}/>    
-      <MovieList title={"Top Rated Movies"} movies={topRatedMovie}/>    
-      <MovieList title={"Up Comming"} movies={UpComingMovie}/>     
+        <MovieList title={"Now Playing"} movies={movies} />
+        <MovieList title={"Popular"} movies={popularMovies} />
+        <MovieList title={"Top Rated Movies"} movies={topRatedMovie} />
+        <MovieList title={"Up Comming"} movies={UpComingMovie} />
       </div>
     </div>
   )
