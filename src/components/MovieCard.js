@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { MOVIE_IMG_URL } from "../utils/constant";
 import "../App.css";
+import { useDispatch } from "react-redux";
+import { addFavMovie, removeFavMovie } from "../utils/favMoviesSlice";
 
-const MovieCard = ({ movieKey, movieName, des, rating, date }) => {
+const MovieCard = ({ movieKey, movieName, des, rating, date, obj }) => {
+  const dispatch = useDispatch();
   const [isActiveCard, setIsActivecard] = useState(false);
   const [isFav, setIsFav] = useState(false);
   const handelCardDetails = () => {
@@ -11,6 +14,11 @@ const MovieCard = ({ movieKey, movieName, des, rating, date }) => {
   const handelFavMovie = (e) => {
     e.stopPropagation();
     setIsFav(!isFav)
+    if(isFav===false){
+      dispatch(addFavMovie(obj))
+    }else{
+      dispatch(removeFavMovie())
+    }
   }
   return (
     <div className="">
@@ -33,8 +41,8 @@ const MovieCard = ({ movieKey, movieName, des, rating, date }) => {
               <p>{rating + "/10"}</p>
               <p>{date}</p>
               <p onClick={handelFavMovie}>
-                <i class={isFav ? "fa-solid fa-star text-yellow-400" : "fa-regular fa-star "}></i>
-                </p>
+                <i className={isFav ? "fa-solid fa-star text-yellow-400" : "fa-regular fa-star "}></i>
+              </p>
             </div>
             <p className="text-xs text-gray-300">{des}</p>
           </div>

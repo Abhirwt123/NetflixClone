@@ -13,7 +13,9 @@ const MovieList = ({ title, movies }) => {
         <div className="flex gap-4">
           {movies.map((movie) => (
             <MovieCard
+              obj={movie}
               key={movie.id}
+              id={movie.id}
               movieKey={movie.poster_path}
               movieName={movie.original_title}
               des={movie.overview}
