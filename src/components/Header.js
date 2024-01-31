@@ -5,12 +5,11 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { searchMovie } from "../utils/GptSlice";
-import { Header_LANG_CONFIG } from "../utils/constant";
-
+import { Header_LANG_CONFIG, LOGO, PROFILE_ICON } from "../utils/constant";
 const Header = () => {
   const dispath = useDispatch();
   const navigate = useNavigate();
-  const changedlang=useSelector((store)=>store.supportedlang.Lang)
+  const changedlang = useSelector((store) => store.supportedlang.Lang)
   const user = useSelector((store) => store.user)
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -36,11 +35,11 @@ const Header = () => {
     dispath(searchMovie());
   }
   return (
-    <div className="absolute z-10 w-full header">
+    <div className="absolute z-10 w-full header lg:py-0 md:py-0 py-2">
       <div className="flex justify-between items-center">
-        <div className="img-wrap w-2/12">
+        <div className="img-wrap lg:w-2/12 md:w-2/12 w-4/12">
           <img
-            src="https://images.ctfassets.net/4cd45et68cgf/7LrExJ6PAj6MSIPkDyCO86/542b1dfabbf3959908f69be546879952/Netflix-Brand-Logo.png?w=700&h=456"
+            src={LOGO}
             alt="logo"
           />
         </div>
@@ -48,11 +47,11 @@ const Header = () => {
           user &&
           <div className="flex gap-2 justify-end px-6">
             <button
-              className="px-4 py-1 bg-red-700 text-white rounded-md me-16 text-lg"
+              className="lg:px-4  px-2 py-1 bg-red-700 text-white rounded-md lg:me-16 lg:text-lg text-xs"
               onClick={handelSearchMoviesPage}>
-             {Header_LANG_CONFIG[changedlang].GptBtnText}
+              {Header_LANG_CONFIG[changedlang].GptBtnText}
             </button>
-            <img src="https://wallpapers.com/images/thumbnail/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp" alt="userIcon" className="w-[8%] object-cover rounded-md" />
+            <img src={PROFILE_ICON} alt="userIcon" className="w-[8%] object-cover rounded-md" />
             <button
               className="text-white bg-red-700 lg:px-3 lg:py-2 p-1 rounded-md lg:text-lg text-xs"
               onClick={handelSignOut}>

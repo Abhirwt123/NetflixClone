@@ -15,10 +15,10 @@ const Footer = () => {
                     <p>{FOOTER_LANG_CONFIG[changedlang].number}<span> 000-800-919-1694</span></p>
                 </div>
                 <div className="links mt-10">
-                    <ul className="flex gap-36">
+                    <ul className="flex lg:gap-36 md:gap-24 gap-4 lg:flex-row md:flex-row flex-col">
                         {footerLinks.map((elm, i) => <li key={i}>{elm.listItem}</li>)}
                     </ul>
-                    <ul className="flex gap-8 mt-4">
+                    <ul className="flex lg:gap-8 mt-4 gap-4 lg:flex-row md:flex-row flex-col">
                         {footerLinksSecond.map((elm, i) => <li key={i}>{elm.listItem}</li>)}
                     </ul>
                 </div>

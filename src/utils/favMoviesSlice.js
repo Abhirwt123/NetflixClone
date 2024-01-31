@@ -9,11 +9,11 @@ const FavMovie = createSlice({
         addFavMovie: (state, action) => {
             state.MoviesList.push(action.payload)
         },
-        removeFavMovie:(state,action)=>{
-          state.MoviesList.pop(action.payload)
+        removeFavMovie: (state, action) => {
+            state.MoviesList.pop(action.payload)
         }
     }
 })
 
-export const { addFavMovie,removeFavMovie } = FavMovie.actions;
+export const { addFavMovie, removeFavMovie } = FavMovie.actions;
 export default FavMovie.reducer;
