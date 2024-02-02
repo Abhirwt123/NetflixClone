@@ -10,7 +10,7 @@ const RecommendedMoviesList = () => {
   const UpComingMovie = useSelector((store) => store.movie?.UpComingMovie);
   const FavMovies =useSelector((store)=>store.FavMovie.MoviesList)
   // if(!FavMovies) return;
-  console.log(FavMovies)
+  // console.log(FavMovies)
   return (
     <div className='z-20 bg-black movies-wrapper'>
       <div className=' relative lg:-mt-24 cardMovie'>

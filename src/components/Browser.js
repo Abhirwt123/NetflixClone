@@ -8,6 +8,7 @@ import useUpComingMovie from '../Hooks/useUpComingMovie';
 import { useSelector } from 'react-redux';
 import SearchPage from './SearchPage';
 import Footer from './Footer';
+// import useMovieDetails from '../Hooks/useMovieDetails';
 
 
 const Browser = () => {
@@ -16,6 +17,7 @@ const Browser = () => {
   usePopularMovie();
   useTopRatedMovie();
   useUpComingMovie();
+
   return (
     <div>
       <Header/>
