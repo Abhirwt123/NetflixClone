@@ -1,8 +1,8 @@
 import "../App.css";
 import { RouterProvider, createBrowserRouter} from "react-router-dom";
 import SignUp from "./SignUp";
-import Browser from "./Browser";
-import MovieDetails from "./MovieDetails";
+import Browser from "./BrowsePage/Browser";
+import MovieDataContainer from "./SingleMovieDataPage/MovieDataContainer";;
 const Body = () => {
   const appRouter = createBrowserRouter([
     {
@@ -14,9 +14,9 @@ const Body = () => {
       element: <Browser />,
     },
     {
-      path: "browser/movieDetails/:id",
-      element: <MovieDetails />,
-    },
+      path: "browser/movie/:id",
+      element: <MovieDataContainer />,
+    }
   ]);
   return (
     <RouterProvider router={appRouter}>

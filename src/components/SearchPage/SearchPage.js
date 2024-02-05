@@ -1,12 +1,14 @@
 import React from 'react'
-import Header from './Header'
+import Header from '../ResuedComponent/Header'
 import SearchBox from './SearchBox'
+import SearchedMovie from './SearchedMovie'
 
 const SearchPage = () => {
     return (
-        <div className="main-bg w-full h-screen">
+        <div className="bg-gray-800 w-full min-h-screen">
             <Header />
             <SearchBox />
+            <SearchedMovie/>
         </div>
     )
 }

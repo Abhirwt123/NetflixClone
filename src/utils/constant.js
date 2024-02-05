@@ -80,3 +80,6 @@ export const SEARCH_BOX_LANG_CONFIG = {
     }
 }
 export const OPEN_AI_KEY = "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";
+
+export const FAKE_AVATAR='https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?w=740&t=st=1706940984~exp=1706941584~hmac=0f17fdc619b325b039d70acdff06346a14a5dd913004bbdb7f69240444fd689c';
+export const DUMMY_MOVIE_POSTER='https://media.istockphoto.com/id/1352945762/vector/no-image-available-like-missing-picture.jpg?s=612x612&w=0&k=20&c=4X-znbt02a8EIdxwDFaxfmKvUhTnLvLMv1i1f3bToog='

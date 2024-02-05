@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeLang } from '../utils/appConfigSlice';
-import { FOOTER_LANG_CONFIG } from '../utils/constant';
+import { changeLang } from '../../utils/appConfigSlice';
+import { FOOTER_LANG_CONFIG } from '../../utils/constant';
 
 const Footer = () => {
     const dispath = useDispatch();

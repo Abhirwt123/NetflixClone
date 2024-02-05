@@ -5,9 +5,9 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import Header from "./Header";
+import Header from "./ResuedComponent/Header";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
+import Footer from "./ResuedComponent/Footer";
 import { SIGN_UP_LANG_CONFIG } from "../utils/constant";
 import { useSelector } from "react-redux";
 

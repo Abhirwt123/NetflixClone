@@ -1,5 +1,5 @@
 import React from "react";
-import MovieCard from "./MovieCard";
+import MovieCard from "../ResuedComponent/MovieCard";
 
 const MovieList = ({ title, movies }) => {
   if (!movies) return;
@@ -13,6 +13,7 @@ const MovieList = ({ title, movies }) => {
         <div className="flex gap-4">
           {movies.map((movie) => (
             <MovieCard
+              obj={movie}
               id={movie.id}
               key={movie.id}
               movieKey={movie.poster_path}

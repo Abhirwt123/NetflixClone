@@ -1,5 +1,5 @@
 import React from "react";
-import useBackgroundMovieTrailer from "../Hooks/useBackgroundMovieTrailer";
+import useBackgroundMovieTrailer from "../../Hooks/useBackgroundMovieTrailer";
 import { useSelector } from "react-redux";
 
 const BackgroundPlayingMovie = () => {

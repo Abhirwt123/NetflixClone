@@ -6,14 +6,14 @@ import { useSelector } from 'react-redux';
 
 const MovieContainer = () => {
     const movie = useSelector((store) => store.movie?.addNowPlayingMovie);
-    // console.log(id)
+    // console.log(movie)
     if (!movie) return;
     const mainMovie = movie[1];
-    const { title, overview } = mainMovie;
+    const { title, overview,release_date,vote_average } = mainMovie;
     return (
-        <div className='wrapper relative '>
+        <div className='wrapper relative'>
             <BackgroundPlayingMovie />
-            <BackgroundMovieTitle title={title} des={overview} />
+            <BackgroundMovieTitle title={title} des={overview} date={release_date} rating={vote_average} />
             <RecommendedMoviesList />
         </div>
     )
