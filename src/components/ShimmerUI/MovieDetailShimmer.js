@@ -2,11 +2,11 @@ import React from "react";
 
 const MovieDetailShimmer = () => {
   return (
-    <div className=" flex gap-16 mt-96 h-screen">
+    <div className=" flex gap-16 justify-center h-screen">
       <div className="grid grid-cols-12 gap-12 items-center">
         <div className="parent-container col-span-4">
-          <div className=" shimmer-container img-wrap ">
-            <div className="shimmer w-80 h-96"></div>
+          <div className=" shimmer-container img-wrap " style={{width:"389px",height:"583px"}}>
+            <div className="shimmer"></div>
           </div>
         </div>
         <div className="col-span-8">

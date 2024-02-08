@@ -8,9 +8,9 @@ import "react-circular-progressbar/dist/styles.css";
 const MovieCard = ({ movieKey, id, obj }) => {
   const navigate = useNavigate();
   const handelCardDetails = () => {
-    navigate(`movie/${id}`);
+    navigate(`/browser/movie/${id}`);
   };
-  if(!obj)return;
+  if (!obj) return;
   const { vote_average, title } = obj;
   const percentage = vote_average.toFixed(1);
 
@@ -24,18 +24,21 @@ const MovieCard = ({ movieKey, id, obj }) => {
             className="object-cover h-full w-full rounded-xl"
           />
         </div>
-        <div className="absolute left-0 -bottom-0 flex items-center bg-gray-900 w-full rounded-b-xl">
-          <div className="w-16 h-16 rounded-full text-white text-center text-4xl p-2">
+        <div className="absolute left-0 -bottom-0 flex items-center bg-gray-900 w-full rounded-b-xl gap-2">
+          <div className="w-16 h-16 p-2">
             <CircularProgressbar
               value={percentage}
               text={`${percentage}`}
               maxValue={10}
               styles={buildStyles({
-                textSize: "30px",
+                pathColor: `#E74C3C`,
+                textSize: "34px",
+                textColor: '#fff',
+
               })}
             />
           </div>
-          <p className="text-white">{title}</p>
+          <p className="text-white">{title.slice(0,18)+"..."}</p>
         </div>
       </div>
     </div>

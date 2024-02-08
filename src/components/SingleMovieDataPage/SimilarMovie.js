@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import useSimilarMovie from "../../Hooks/useSimilarMovie";
 import MovieCard from "../ResuedComponent/MovieCard";
 import MovieListShimmer from "../ShimmerUI/MovieListShimmer";
+import { API_OPTIONS } from "../../utils/constant";
 
 const SimilarMovie = () => {
   const [similarMovieData, setSimilarMovieData] = useState();
   const { id } = useParams();
-  useSimilarMovie(id, setSimilarMovieData);
-  if (!similarMovieData) return <div className="mt-10"><MovieListShimmer/></div> ;
-  // console.log(similarMovieData);
+  useEffect(()=>{
+    const similarMovie=async()=>{
+      const data=await fetch(`https://api.themoviedb.org/3/movie/${id}/similar`,API_OPTIONS);
+      const json =await data.json();
+      setSimilarMovieData(json.results)
+    }
+    similarMovie()
+  },[id]);
+  if (!similarMovieData) return <div className="mt-10"><MovieListShimmer /></div>;
   return (
     <>
       <p className="text-3xl text-white my-4">Similar Movies</p>

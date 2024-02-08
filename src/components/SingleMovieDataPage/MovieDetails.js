@@ -1,16 +1,22 @@
-import React, { useState } from "react";
-import useMovieDetails from "../../Hooks/useMovieDetails";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import MovieDetailShimmer from "../ShimmerUI/MovieDetailShimmer";
+import { API_OPTIONS } from "../../utils/constant";
 
 const MovieDetails = () => {
-  const [data, setdata] = useState();
+  const [SingleMoviedata, setSingleMoviedata] = useState();
   const { id } = useParams();
-  useMovieDetails(id, setdata);
-  if (!data) {
-    return  <MovieDetailShimmer />};
+  useEffect(()=>{
+    const Moviedata=async()=>{
+      const data = await fetch(`https://api.themoviedb.org/3/movie/${id}`,API_OPTIONS);
+      const json =await data.json();
+      setSingleMoviedata(json)
+  }
+  Moviedata()
+  },[id])
+  if (!SingleMoviedata) return <MovieDetailShimmer />
   const {
     title,
     poster_path,
@@ -19,11 +25,10 @@ const MovieDetails = () => {
     release_date,
     status,
     overview,
-  } = data;
+  } = SingleMoviedata;
   // console.log(data);
-  const totalVotes = data.vote_average;
+  const totalVotes = SingleMoviedata.vote_average;
   const percentage = totalVotes.toFixed(1);
- 
   return (
     <>
       <div className=" flex gap-16">
@@ -85,9 +90,6 @@ const MovieDetails = () => {
                     {Math.round(runtime / 60) + "hr"}
                   </span>
                 </p>
-              </div>
-              <div>
-                <p>{}</p>
               </div>
             </div>
           </div>

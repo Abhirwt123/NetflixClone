@@ -35,10 +35,13 @@ const Header = () => {
   const handelSearchMoviesPage = () => {
     dispath(searchMovie());
   }
+  // const handelPageRedirect=()=>{
+  //   navigate('/browser')
+  // }
   return (
     <div className="absolute z-10 w-full header lg:py-0 md:py-0 py-2">
       <div className="flex justify-between items-center">
-        <div className="img-wrap lg:w-2/12 md:w-2/12 w-4/12">
+        <div className="img-wrap lg:w-2/12 md:w-2/12 w-4/12 ">
           <img
             src={LOGO}
             alt="logo"

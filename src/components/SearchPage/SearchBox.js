@@ -2,14 +2,11 @@ import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SEARCH_BOX_LANG_CONFIG } from "../../utils/constant";
 import { searchText } from "../../utils/moviesSlice";
-// import {searchMovie} from '../../utils/GptSlice';
 
 const SearchBox = () => {
   const searchQuery = useRef();
   const dispath=useDispatch()
   const changedlang = useSelector((store) => store.supportedlang.Lang);
-  // const gptVal =useSelector((store)=>store.Gpt.searchMovie);
-  // console.log(gptVal)
   const handelMovieSaerch = () => {
     dispath(searchText(searchQuery.current.value))
   };

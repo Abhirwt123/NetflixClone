@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
-import useRecommendationMovie from '../../Hooks/useRecommendationMovie'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import MovieCard from '../ResuedComponent/MovieCard'
 import MovieListShimmer from '../ShimmerUI/MovieListShimmer'
+import { API_OPTIONS } from '../../utils/constant'
 
 const RecommendateMovie = () => {
     const [recommendateData,setRecommendData]=useState()
     const {id}=useParams()
-    useRecommendationMovie(id,setRecommendData);
+    useEffect(()=>{
+      const recommendationMovie=async()=>{
+        const data=await fetch(`https://api.themoviedb.org/3/movie/${id}/recommendations`,API_OPTIONS);
+        const json =await data.json();
+        setRecommendData(json.results)
+      }
+      recommendationMovie()
+    },[id])
     if(!recommendateData) return <div className='mt-10'><MovieListShimmer/></div> ;
   return (
     <>
