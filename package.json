@@ -1,7 +1,7 @@
 {
   "name": "my-react-app",
   "version": "0.1.0",
-  "homepage": "https://Abhirwt123.github.io/NetflixClone",
+  "homepage": "https://abhirwt123.github.io/NetflixClone/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
