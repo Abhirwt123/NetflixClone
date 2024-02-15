@@ -10,7 +10,7 @@ const MovieList = ({ title, movies }) => {
         {title}
       </h1>
       <div className="overflow-x-scroll movies-wrapper">
-        <div className="flex gap-4">
+        <div className="flex lg:gap-4 gap-2">
           {movies.map((movie) => (
             <MovieCard
               obj={movie}

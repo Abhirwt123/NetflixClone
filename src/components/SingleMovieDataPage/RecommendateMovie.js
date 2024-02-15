@@ -18,7 +18,7 @@ const RecommendateMovie = () => {
     if(!recommendateData) return <div className='mt-10'><MovieListShimmer/></div> ;
   return (
     <>
-      <p className="text-3xl text-white my-4">Recommendate Movies</p>
+      <p className="lg:text-3xl md:text-2xl text-xl text-white my-4">Recommendate Movies</p>
       <div className="flex overflow-x-scroll movies-wrapper gap-6">
         {recommendateData.map((movie) => (
           <MovieCard

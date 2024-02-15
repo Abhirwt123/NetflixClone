@@ -18,7 +18,7 @@ const SimilarMovie = () => {
   if (!similarMovieData) return <div className="mt-10"><MovieListShimmer /></div>;
   return (
     <>
-      <p className="text-3xl text-white my-4">Similar Movies</p>
+      <p className="lg:text-3xl md:text-2xl text-xl text-white my-4">Similar Movies</p>
       <div className="flex overflow-x-scroll movies-wrapper gap-6">
         {similarMovieData.map((movie) => (
           <MovieCard

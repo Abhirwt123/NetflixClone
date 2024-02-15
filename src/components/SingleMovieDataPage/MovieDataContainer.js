@@ -8,7 +8,7 @@ import RecommendateMovie from "./RecommendateMovie";
 const MovieDataContainer = () => {
   return (
     <>
-      <div className="bg-gray-800 px-32 py-14">
+      <div className="bg-gray-800 lg:px-32 md:px-24 px-6 py-14">
         <MovieDetails />
         <MovieCast />
         <SimilarMovie />

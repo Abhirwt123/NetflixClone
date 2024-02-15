@@ -16,7 +16,7 @@ const MovieCast = () => {
   if (!castData) return;
   return (
     <div>
-      <h1 className="text-3xl text-white my-4">Movie Cast</h1>
+      <h1 className="lg:text-3xl md:text-2xl text-xl text-white my-4">Movie Cast</h1>
       <div className="flex overflow-x-scroll gap-12 movies-wrapper">
         {castData?.cast?.map((actor) => (
           <div key={actor.id}>
@@ -27,7 +27,7 @@ const MovieCast = () => {
                 className="object-cover w-full h-full"
               />
             </div>
-            <p className="text-xl text-white text-center">{actor?.name}</p>
+            <p className="lg:text-xl md:text-lg text-sm text-white text-center">{actor?.name}</p>
           </div>
         ))}
       </div>

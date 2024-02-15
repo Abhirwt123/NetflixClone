@@ -3,13 +3,13 @@ import React from "react";
 const BackgroundMovieTitle = ({ title, des, date, rating }) => {
     const popularity=rating.toFixed(1)
   return (
-    <div className="pt-[18%] w-full aspect-video absolute text-white top-0 bg-gradient-to-r from-gray-900">
+    <div className="lg:pt-[18%] md:pt-[12%] pt-10 w-full aspect-video absolute text-white top-0 bg-gradient-to-r from-gray-900 hidden">
       <div className="lg:px-12 md:px-8 px-2  pt-20">
         <div className="title lg:mb-4 md:md-4">
-          <h1 className="lg:text-6xl text-xl text-bold lg:w-8/12">{title}</h1>
+          <h1 className="lg:text-6xl text-xl text-bold lg:w-8/12 w-full">{title}</h1>
         </div>
         <div className="decription">
-          <p className="py-4 w-6/12 lg:text-lg text-sm lg:block md:blockl">
+          <p className="py-4 lg:w-6/12 lg:text-lg text-sm lg:block md:block w-full ">
             {des}
           </p>
         </div>

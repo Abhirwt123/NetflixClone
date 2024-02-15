@@ -35,13 +35,10 @@ const Header = () => {
   const handelSearchMoviesPage = () => {
     dispath(searchMovie());
   }
-  // const handelPageRedirect=()=>{
-  //   navigate('/browser')
-  // }
   return (
     <div className="absolute z-10 w-full header lg:py-0 md:py-0 py-2">
       <div className="flex justify-between items-center">
-        <div className="img-wrap lg:w-2/12 md:w-2/12 w-4/12 ">
+        <div className="img-wrap w-2/12 ">
           <img
             src={LOGO}
             alt="logo"
@@ -49,13 +46,13 @@ const Header = () => {
         </div>
         {
           user &&
-          <div className="flex gap-2 justify-end px-6">
+          <div className="flex gap-2 justify-end lg:px-6 px-2">
             <button
               className="lg:px-4  px-2 py-1 bg-red-700 text-white rounded-md lg:me-16 lg:text-lg text-xs"
               onClick={handelSearchMoviesPage}>
               {gptVal?"Home":Header_LANG_CONFIG[changedlang].GptBtnText}
             </button>
-            <img src={PROFILE_ICON} alt="userIcon" className="w-[8%] object-cover rounded-md" />
+            <img src={PROFILE_ICON} alt="userIcon" className="w-[8%] object-cover rounded-md lg:block md:block hidden" />
             <button
               className="text-white bg-red-700 lg:px-3 lg:py-2 p-1 rounded-md lg:text-lg text-xs"
               onClick={handelSignOut}>

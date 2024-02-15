@@ -12,7 +12,7 @@ const RecommendedMoviesList = () => {
   // console.log(FavMovies)
   return (
     <div className='z-20 bg-black movies-wrapper'>
-      <div className=' relative lg:-mt-24 cardMovie'>
+      <div className=' relative -mt-24 cardMovie'>
         <MovieList title={"Now Playing"} movies={movies} />
         <MovieList title={"Popular"} movies={popularMovies} />
         <MovieList title={"Top Rated Movies"} movies={topRatedMovie} />

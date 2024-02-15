@@ -17,7 +17,7 @@ const MovieCard = ({ movieKey, id, obj }) => {
   return (
     <div onClick={handelCardDetails}>
       <div className="relative">
-        <div className="movie-poster lg:w-56 w-28 h-80">
+        <div className="movie-poster lg:w-56 w-24">
           <img
             src={movieKey ? MOVIE_IMG_URL + movieKey : DUMMY_MOVIE_POSTER}
             alt="movie card"
@@ -25,7 +25,7 @@ const MovieCard = ({ movieKey, id, obj }) => {
           />
         </div>
         <div className="absolute left-0 -bottom-0 flex items-center bg-gray-900 w-full rounded-b-xl gap-2">
-          <div className="w-16 h-16 p-2">
+          <div className="lg:w-16 lg:h-16 md:w-12 md:h-12 w-8 h-8  p-2">
             <CircularProgressbar
               value={percentage}
               text={`${percentage}`}
@@ -38,7 +38,7 @@ const MovieCard = ({ movieKey, id, obj }) => {
               })}
             />
           </div>
-          <p className="text-white">{title.slice(0,18)+"..."}</p>
+          <p className="text-white text-xs">{title.slice(0,18)+"..."}</p>
         </div>
       </div>
     </div>
